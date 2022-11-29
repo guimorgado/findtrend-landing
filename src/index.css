@@ -1,3 +1,52 @@
-h1 {
-	color: red;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.backgroundImage {
+	background-image: url('../src/assets/Bg-hero/websiteBackground.svg');
+}
+
+input[type='checkbox'] {
+	-webkit-appearance: none;
+	visibility: hidden;
+	display: none;
+}
+
+.toggle {
+	width: 75px;
+	height: 35px;
+	border-radius: 10px;
+
+	display: inline-block;
+	cursor: pointer;
+}
+
+.toggle_input {
+	display: none;
+}
+
+.toggle_fill {
+	position: relative;
+	width: 75px;
+	height: 35px;
+	border-radius: 30px;
+	background: #ffffff;
+	transition: background 0.2s;
+}
+
+.toggle_fill::after {
+	content: '';
+	position: absolute;
+	top: 15%;
+	left: 10%;
+	height: 25px;
+	width: 25px;
+	background-color: #a8ff35;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+	border-radius: 30px;
+	transition: transform 0.2s;
+}
+
+.toggle_input:checked ~ .toggle_fill::after {
+	transform: translateX(35px);
 }
