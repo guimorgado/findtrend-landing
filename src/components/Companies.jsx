@@ -17,11 +17,11 @@ import WeTransfer from '../assets/WeTransfer.svg';
 
 const Companies = () => {
 	return (
-		<div className='py-32 container mx-auto'>
-			<h1 className='text-6xl font-bold text-center'>
+		<div className='md:py-32 py-24 px-5 container mx-auto'>
+			<h1 className='lg:text-6xl text-5xl font-bold text-center'>
 				Findtrend make +1000 Startup grow
 			</h1>
-			<div className='w-full mt-16 grid grid-cols-4 gap-x-6 justify-center gap-y-6'>
+			<div className='w-full mt-16 grid md:grid-cols-4 grid-cols-2 gap-x-6 justify-center gap-y-6'>
 				<div className='h-[120px] rounded-xl bg-[#F5F5F5] flex justify-center items-center'>
 					<img src={Microsoft} alt='LogoMicrosoft' />
 				</div>

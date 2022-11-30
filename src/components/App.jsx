@@ -10,9 +10,9 @@ import Prices from './Prices';
 
 const App = () => {
 	return (
-		<>
+		<div>
 			<div className='backgroundImage'>
-				<div className='container mx-auto'>
+				<div className='lg:container mx-auto'>
 					<Menu />
 					<Header />
 				</div>
@@ -24,7 +24,7 @@ const App = () => {
 			<Prices />
 			<JoinUs />
 			<Footer />
-		</>
+		</div>
 	);
 };
 

@@ -1,15 +1,20 @@
 import { useState } from 'react';
+import Save10Mobile from '../assets/BottomPrices.svg';
 import Save10 from '../assets/Save10.svg';
 import Tick from '../assets/Tick.svg';
+import { useMatchMedia } from '../hooks/useMatchMedia';
 
 const Prices = () => {
 	const [check, setCheck] = useState(false);
+	const isMobileResolution = useMatchMedia('(max-width:1020px)');
 
 	return (
 		<div className='py-32 bg-black'>
 			<div className='container mx-auto'>
 				<div className='flex justify-center flex-col items-center'>
-					<h1 className='text-white font-bold text-6xl'>Get your best deal</h1>
+					<h1 className='text-center text-white font-bold lg:text-6xl text-5xl'>
+						Get your best deal
+					</h1>
 					<div className='relative text-white gap-5 flex mt-10 items-center'>
 						<p className='text-lg'>Monthly</p>
 						<label className='toggle' htmlFor='myToggle'>
@@ -23,11 +28,19 @@ const Prices = () => {
 							<div className='toggle_fill'></div>
 						</label>
 						<p className='text-lg text-gray-400'>Yearly</p>
-						<img src={Save10} className='absolute -top-2 -right-24' />
+						{isMobileResolution ? (
+							<>
+								<img src={Save10Mobile} className='absolute top-10 right-0' />
+							</>
+						) : (
+							<>
+								<img src={Save10} className='absolute -top-2 -right-24' />
+							</>
+						)}
 					</div>
 				</div>
 
-				<div className='mt-10 grid grid-cols-3 justify-center items-center gap-10'>
+				<div className='lg:mt-10 mt-20 grid lg:grid-cols-3 justify-center items-center gap-10'>
 					<div className='flex flex-col justify-between rounded-xl h-[640px] bg-white py-5 px-7'>
 						<div>
 							<div className='border-b-2 pb-5 border-gray-300'>
